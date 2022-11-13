@@ -1,4 +1,4 @@
-package Evento;
+package Evento.Participantes;
 
 
 public class Participantes {
@@ -12,7 +12,7 @@ public class Participantes {
     public Participantes() {
     }
     public Participantes(String cpf, String name, String age, String institution, String academicTtle, String passwordContainer, String key) {
-        setAcademicTtle(academicTtle);
+        setAcademicTitle(academicTtle);
         setAge(age);
         setCpf(cpf);
         setName(name);
@@ -68,12 +68,12 @@ public class Participantes {
         this.institution = institution;
     }
 
-    public String getAcademicTtle() {
+    public String getAcademicTitle() {
         return academicTtle;
     }
 
-    public void setAcademicTtle(String academicTtle) {
-        this.academicTtle = academicTtle;
+    public void setAcademicTitle(String academicTitle) {
+        this.academicTtle = academicTitle;
     }
 
     void listar(){

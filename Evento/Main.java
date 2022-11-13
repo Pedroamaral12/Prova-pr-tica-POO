@@ -1,5 +1,8 @@
 package Evento;
 
+import Evento.Participantes.ListaParticipantes;
+import Evento.Participantes.Participantes;
+
 import java.util.Collection;
 import java.util.Scanner;
 
@@ -9,7 +12,13 @@ public class Main {
        Scanner input;
        input = new Scanner(System.in);
        String login, password;
+       String tituloAvaliacao;
+       String tituloNegado, tituloAceito;
+       String avaliacaoArtigo, tituloArtigoAvaliacao;
+       String certificadoCpf, certificadoNome, certificadoCargo;
        String cpf, name, age, passwordContainer, institution, academicTtle, key;
+       String autoresArtigo, tituloArtigo;
+       String tituloDados;
        Participantes novoPartcipante = new Participantes();
        ListaParticipantes novaListaParticipantes = new ListaParticipantes();
 
@@ -72,22 +81,50 @@ public class Main {
                case 4:
                    break;
                case 5:
+                   System.out.println("Informe o cpf:");
+                   certificadoCpf = input.nextLine();
+                   System.out.println("Informe o nome:");
+                   certificadoNome = input.nextLine();
+                   System.out.println("Informe o cargo:");
+                   certificadoCargo = input.nextLine();
+
+                   System.out.println("*-----------------------------------*");
+                   System.out.println("CERTIFICADO");
+                   System.out.println("O/A " + certificadoNome + " participou do evento");
+                   System.out.println("sob o cargo de " + certificadoCargo + ".");
+                   System.out.println("*------------------------------------*");
                    break;
                case 6:
+                   System.out.println("Informe o/os autores (até 5):");
+                   autoresArtigo = input.nextLine();
+                   System.out.println("Informe o título do artigo");
+                   tituloArtigo = input.nextLine();
                    break;
                case 7:
+                   System.out.println("Informe o título do artigo");
+                   tituloArtigoAvaliacao = input.nextLine();
+                   System.out.println("Digite sua avaliação.");
+                   avaliacaoArtigo = input.nextLine();
                    break;
                case 8:
+                   System.out.println("Informe o título do artigo");
+                   tituloAvaliacao = input.nextLine();
                    break;
                case 9:
+                   System.out.println("Informe o título do artigo");
+                   tituloAceito = input.nextLine();
                    break;
                case 10:
+                   System.out.println("Informe o título do artigo");
+                   tituloNegado = input.nextLine();
                    break;
-               case 11:
+               case 11://listar negados
                    break;
-               case 12:
+               case 12://listar aceitos
                    break;
                case 13:
+                   System.out.println("Informe o título do artigo");
+                   tituloDados = input.nextLine();
                    break;
                case 14:
                    novaListaParticipantes.listarParticipantes();
