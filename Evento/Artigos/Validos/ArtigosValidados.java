@@ -1,6 +1,6 @@
 package Evento.Artigos.Validos;
 
-import Evento.Artigos.ArtigosCadastrados;
+import Evento.Artigos.ListarArtigos;
 
 public class ArtigosValidados {
 }

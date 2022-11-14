@@ -2,26 +2,31 @@ package Evento.Participantes;
 import Evento.Participantes.Participantes;
 
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Arrays;
+import java.util.Collections;
 
 public class ListaParticipantes {
-    ArrayList <Participantes> listaParticipantes;
-    ArrayList <Participantes> listaNomes;
+    static ArrayList <Participantes> listaParticipantes;
+    static ArrayList<String> arrayNames;
     public ListaParticipantes() {
-        this.listaParticipantes = new ArrayList<>();
+        listaParticipantes = new ArrayList<>();
     }
 
 
     public void insertParticipantes(Participantes novoParticipante){
         listaParticipantes.add(novoParticipante);
+
+
     } //Adiciona os participantes cadastrados a lista.
 
 
-    //Ordena os participantes em ordem alfabetica.
     public void listarParticipantes(){
-        System.out.println("#---LISTAGEM---#");
-        for (Participantes participanteAtivo:listaParticipantes){//listaNomes
+
+      System.out.println("#---LISTAGEM---#");
+        for (Participantes participanteAtivo:listaParticipantes){
             participanteAtivo.listar();
         }
     } //Imprime os participantes da lista.
+
+
 }

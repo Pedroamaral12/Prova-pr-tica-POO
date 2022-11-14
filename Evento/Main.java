@@ -6,7 +6,6 @@ import Evento.Participantes.ListaParticipantes;
 import Evento.Participantes.Participantes;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Scanner;
 
 public class Main {
@@ -86,6 +85,7 @@ public class Main {
                case 3:
                    System.out.println("Informe o cpf que deseja validar:");
                    validacaoCpf = input.nextLine();
+
                    break;
                case 4:
                    System.out.println("Informe o cpf que deseja invalidar:");
