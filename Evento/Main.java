@@ -1,8 +1,11 @@
 package Evento;
 
+import Evento.Artigos.ArtigosCadastrados;
+import Evento.Artigos.ListarArtigos;
 import Evento.Participantes.ListaParticipantes;
 import Evento.Participantes.Participantes;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Scanner;
 
@@ -19,8 +22,12 @@ public class Main {
        String cpf, name, age, passwordContainer, institution, academicTtle, key;
        String autoresArtigo, tituloArtigo;
        String tituloDados;
+       ArrayList<String> autoresVetor;
+       String validacaoCpf, inavlidacaoCpf;
        Participantes novoPartcipante = new Participantes();
+       ArtigosCadastrados novoArtigo = new ArtigosCadastrados();
        ListaParticipantes novaListaParticipantes = new ListaParticipantes();
+       ListarArtigos novaListaArtigos = new ListarArtigos();
 
        do{
            System.out.println("#-----------------------------------------#");
@@ -77,8 +84,12 @@ public class Main {
 
                    break;
                case 3:
+                   System.out.println("Informe o cpf que deseja validar:");
+                   validacaoCpf = input.nextLine();
                    break;
                case 4:
+                   System.out.println("Informe o cpf que deseja invalidar:");
+                   inavlidacaoCpf = input.nextLine();
                    break;
                case 5:
                    System.out.println("Informe o cpf:");
@@ -95,32 +106,41 @@ public class Main {
                    System.out.println("*------------------------------------*");
                    break;
                case 6:
-                   System.out.println("Informe o/os autores (até 5):");
-                   autoresArtigo = input.nextLine();
-                   System.out.println("Informe o título do artigo");
+                   System.out.println("Informe o número de autores (até 5):");
+                   int x = input.nextInt();
+                   while(x>0) {
+                       System.out.println("Informe autor(a)" + x + ":");
+                       autoresArtigo = input.nextLine();
+                       x-=1;
+                   };
+                   System.out.println("Informe o título do artigo:");
                    tituloArtigo = input.nextLine();
+                   novoArtigo = new ArtigosCadastrados(tituloArtigo);
+                   novaListaArtigos.insertArtigos(novoArtigo);
                    break;
                case 7:
-                   System.out.println("Informe o título do artigo");
+                   System.out.println("Informe o título do artigo:");
                    tituloArtigoAvaliacao = input.nextLine();
-                   System.out.println("Digite sua avaliação.");
+                   System.out.println("Digite sua avaliação:");
                    avaliacaoArtigo = input.nextLine();
                    break;
                case 8:
-                   System.out.println("Informe o título do artigo");
+                   System.out.println("Informe o título do artigo:");
                    tituloAvaliacao = input.nextLine();
                    break;
                case 9:
-                   System.out.println("Informe o título do artigo");
+                   System.out.println("Informe o título do artigo:");
                    tituloAceito = input.nextLine();
                    break;
                case 10:
-                   System.out.println("Informe o título do artigo");
+                   System.out.println("Informe o título do artigo:");
                    tituloNegado = input.nextLine();
                    break;
-               case 11://listar negados
+               case 11:
+                   //novaListaNegados.listarValidos();
                    break;
-               case 12://listar aceitos
+               case 12:
+                   //novaListaValidos.listarNegados();
                    break;
                case 13:
                    System.out.println("Informe o título do artigo");
